@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <i class="fas fa-check-circle"></i>
+                Todo List
+            </h1>
+            <p class="subtitle">Stay organized and productive</p>
+        </header>
+
+        <main class="main">
+            <!-- Add Todo Form -->
+            <form class="todo-form" id="todoForm">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="What needs to be done?"
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Todo List -->
+            <div class="todo-container" id="todoContainer">
+                <ul class="todo-list" id="todoList">
+                    <!-- Todos will be dynamically added here -->
+                </ul>
+            </div>
+
+            <!-- Todo Stats and Filters -->
+            <div class="todo-footer" id="todoFooter" style="display: none;">
+                <div class="todo-stats">
+                    <span id="todoCount">0 items left</span>
+                </div>
+                
+                <div class="todo-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <div class="todo-actions">
+                    <button class="clear-btn" id="clearCompleted">
+                        Clear completed
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>No todos yet</h3>
+            <p>Add a todo to get started!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
